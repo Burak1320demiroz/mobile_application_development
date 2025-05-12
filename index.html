@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1a73e8;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .app-button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-button:hover {
+            background-color: #1557b0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mobile Application Development</h1>
+        <button class="app-button" onclick="openApp1()">First Mobile Application</button>
+        <br>
+        <br>
+        <button class="app-button" onclick="openApp2()">First Mobile Application</button>
+
+    </div>
+
+    <script>
+        function openApp1() {
+            window.location.href = "app_1/app_1.html";
+        }
+
+        function openApp2() {
+            window.location.href = "app_1/app_1.html";
+        }
+    </script>
+
+</body>
+</html>

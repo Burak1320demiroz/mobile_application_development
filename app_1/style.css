@@ -1,0 +1,143 @@
+:root {
+    --primary: #2c3e50;
+    --primary-light: #34495e;
+    --primary-dark: #1a252f;
+    --accent: #e74c3c;
+    --accent-light: #ff6b6b;
+    --accent-dark: #c0392b;
+    --background: #ecf0f1;
+    --surface: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --border: #bdc3c7;
+    --profile-bg: #3498db;
+    --security-bg: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    background: var(--profile-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.app-showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.app-info {
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+.app-info h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.app-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.features-list li:before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.media-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.image-container, .video-container {
+    background: var(--surface);
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+.image-container img, .video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.security-section {
+    background: var(--security-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.security-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.security-section p {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .media-section {
+        grid-template-columns: 1fr;
+    }
+}
