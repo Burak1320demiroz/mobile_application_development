@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Root Rehberi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background-color: #e7f5fe;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Android'de Root Nedir ve Nasıl Yapılır?</h1>
+    
+    <div class="info-box">
+        <p><strong>Önemli:</strong> Root işlemi cihazınızın garantisini geçersiz kılabilir, güvenlik riski oluşturabilir ve bazı uygulamaların çalışmasını engelleyebilir. Bu işlemi yalnızca risklerini anladığınız takdirde gerçekleştirin.</p>
+    </div>
+
+    <h2>Android'de Root Nedir?</h2>
+    <p>Android'de <strong>root</strong>, Linux tabanlı işletim sistemlerindeki "root kullanıcısı" kavramından gelir. Root erişimi elde etmek, Android cihazınızda <strong>tam yönetici haklarına</strong> sahip olmak anlamına gelir.</p>
+    
+    <p>Root işlemi sayesinde:</p>
+    <ul>
+        <li>Üretici tarafından kısıtlanmış özelliklere erişebilirsiniz</li>
+        <li>Sistem dosyalarını değiştirebilirsiniz</li>
+        <li>Özel ROM'lar (özel işletim sistemleri) yükleyebilirsiniz</li>
+        <li>Root gerektiren uygulamaları kullanabilirsiniz</li>
+        <li>Cihaz performansını özelleştirebilirsiniz</li>
+    </ul>
+
+    <div class="warning">
+        <p><strong>Uyarılar:</strong></p>
+        <ul>
+            <li>Root işlemi sırasında cihazınız brick (tuğla) olabilir (çalışmaz hale gelebilir)</li>
+            <li>Cihaz garantiniz geçersiz olabilir</li>
+            <li>Bazı banka ve güvenlik uygulamaları rootlu cihazlarda çalışmayabilir</li>
+            <li>Cihazınız güvenlik açıklarına daha açık hale gelebilir</li>
+        </ul>
+    </div>
+
+    <h2>Android Cihaz Nasıl Rootlanır?</h2>
+    <p>Root işlemi cihazdan cihaza değişiklik gösterebilir, ancak genel adımlar şu şekildedir:</p>
+
+    <h3>1. Ön Hazırlıklar</h3>
+    <ul>
+        <li><strong>Cihazınızın model numarasını ve yazılım sürümünü öğrenin</strong></li>
+        <li><strong>Verilerinizi yedekleyin</strong> - Root işlemi veri kaybına neden olabilir</li>
+        <li><strong>Cihaz şarjının en az %70 olmasına dikkat edin</strong></li>
+        <li><strong>USB hata ayıklama modunu etkinleştirin</strong>:
+            <ol>
+                <li>Ayarlar > Telefon hakkında'ya gidin</li>
+                <li>"Yapı numarası"na 7 kez dokunarak Geliştirici seçeneklerini açın</li>
+                <li>Geliştirici seçeneklerinde "USB hata ayıklama"nı etkinleştirin</li>
+            </ol>
+        </li>
+        <li><strong>OEM Kilidini açın</strong> (çoğu cihazda gerekli):
+            <ol>
+                <li>Bootloader moduna girin (genellikle Power + Volume Down tuşları)</li>
+                <li>USB üzerinden bilgisayara bağlayın</li>
+                <li>Komut isteminde <code>fastboot oem unlock</code> komutunu çalıştırın</li>
+            </ol>
+        </li>
+    </ul>
+
+    <h3>2. Root Yöntemleri</h3>
+    <p>En yaygın root yöntemleri:</p>
+
+    <h4>a) Magisk ile Root (Önerilen Yöntem)</h4>
+    <ol>
+        <li>Magisk Manager APK'sını indirin</li>
+        <li>Cihazınızın stock boot imajını indirin</li>
+        <li>Magisk Manager ile boot imajını patch'leyin</li>
+        <li>Patch'lenmiş boot imajını fastboot ile flash'layın:
+            <code>fastboot flash boot magisk_patched.img</code>
+        </li>
+        <li>Cihazı yeniden başlatın</li>
+    </ol>
+
+    <h4>b) TWRP Recovery ile Root</h4>
+    <ol>
+        <li>Cihazınıza uygun TWRP recovery'sini indirin</li>
+        <li>Fastboot ile TWRP'yi flash'layın:
+            <code>fastboot flash recovery twrp.img</code>
+        </li>
+        <li>TWRP recovery moduna girin</li>
+        <li>Magisk ZIP dosyasını flash'layın</li>
+        <li>Cihazı yeniden başlatın</li>
+    </ol>
+
+    <h4>c) One-Click Root Uygulamaları (KingRoot, iRoot vb.)</h4>
+    <p>Bazı eski cihazlarda çalışabilir, ancak güvenlik riskleri nedeniyle önerilmez.</p>
+
+    <h3>3. Root Kontrolü</h3>
+    <p>Root işleminin başarılı olup olmadığını kontrol etmek için:</p>
+    <ul>
+        <li>Root Checker uygulamasını kullanabilirsiniz</li>
+        <li>Terminalde <code>su</code> komutunu deneyebilirsiniz</li>
+        <li>Magisk Manager uygulamasının root erişimi gösterip göstermediğine bakabilirsiniz</li>
+    </ul>
+
+    <h2>Root Sonrası Yapılması Gerekenler</h2>
+    <ul>
+        <li><strong>Yedek alın</strong>: TWRP ile tam yedek (nandroid backup) alın</li>
+        <li><strong>Güvenlik önlemleri</strong>: Root erişimini düzenlemek için MagiskHide'i etkinleştirin</li>
+        <li><strong>Modüller</strong>: Magisk modülleri ile ek işlevler ekleyebilirsiniz</li>
+        <li><strong>Güncellemeler</strong>: OTA güncellemeleri rootlu cihazlarda sorun çıkarabilir</li>
+    </ul>
+
+    <div class="info-box">
+        <p><strong>Unutmayın:</strong> Root işlemi cihazınıza göre değişiklik gösterebilir. Cihazınıza özel root yöntemlerini XDA Developers gibi forumlardan araştırmanız önemlidir.</p>
+    </div>
+</body>
+</html>
